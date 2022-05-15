@@ -1,0 +1,34 @@
+#Sort All Characters in given Strings
+
+
+package Assessment;
+
+import java.util.Scanner;
+
+public class SortChar {
+    public static void main(String args[]){
+        Scanner s1=new Scanner(System.in);
+        System.out.println("enter the String");
+        String s=s1.next();
+
+        char c[]=s.toCharArray();
+        int n[]=new int[c.length];
+        for(int i=0;i<c.length;i++) {
+            int q=c[i];
+            n[i]=q;
+        }
+        for(int i=0;i<=n.length-1;i++) {
+            for(int j=i+1;j<=n.length-1;j++) {
+                int temp=n[i];
+                if(n[i]>n[j]) {
+                    n[i]=n[j];
+                    n[j]=temp;
+                }
+            }
+        }
+        for(int i=0;i<n.length;i++) {
+            char a=(char)n[i];
+            System.out.print(a);
+        }
+    }
+}
